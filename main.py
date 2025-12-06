@@ -18,7 +18,7 @@ def load_toi(filename):
             if ballot_part == "":
                 ranks = []
             else:
-                # remove any non-digit characters and split by comma
+                # remove any non-digit characters and split by comma (ChatGPT)
                 ranks = [int(re.sub(r"\D", "", x)) for x in ballot_part.split(",") if re.sub(r"\D", "", x)]
             
             ballots.append((votes, ranks))

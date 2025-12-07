@@ -3,6 +3,7 @@ import re
 from typing import Callable
 from copy import deepcopy
 from random import shuffle
+from time import perf_counter
 
 
 def print_args(*args, **kwargs) -> None:
@@ -305,7 +306,12 @@ if __name__ == "__main__":
     # print(new_ballots)
     # print(ballots == new_ballots)
     # print(ballots)
-    shuffle(ballots.ballots)
+    # shuffle(ballots.ballots)
     # print(ballots)
     # ballots.take_n(100)
+    start = perf_counter()
     print(new_algorithm(ballots))
+    end = perf_counter()
+
+    print(f"Computation took {end - start} seconds")
+    # Computation took 0.7062909579835832 seconds
